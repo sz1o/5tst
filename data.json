@@ -7,28 +7,6 @@
     {
       "name": "ESP",
       "code": "loadstring(game:HttpGet('https://example.com/esp.lua'))()"
-    },
-    {
-      "name": "Speed Hack",
-      "code": "loadstring(game:HttpGet('https://example.com/speed.lua'))()"
-    },
-    {
-      "name": "Silent Aim",
-      "code": "loadstring(game:HttpGet('https://example.com/silent.lua'))()"
-    },
-    {
-      "name": "UI Loader",
-      "code": "loadstring(game:HttpGet('https://example.com/ui.lua'))()"
-    }
-  ],
-  "games": [
-    {
-      "name": "Webfishing",
-      "file": "games/super-mario-64.html"
-    },
-    {
-      "name": "Time Shooter 3",
-      "file": "games/time-shooter-3.html"
     }
   ]
 }
