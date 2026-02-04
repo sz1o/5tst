@@ -1,0 +1,218 @@
+:root{
+  --bg:#05070c;
+  --panel:rgba(10,15,30,.85);
+  --text:#e5e7eb;
+  --muted:#9ca3af;
+  --neon:#7dd3fc;
+}
+
+*{
+  box-sizing:border-box;
+  font-family:'JetBrains Mono', monospace;
+}
+
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  overflow:hidden;
+}
+
+/* ===== BACKGROUNDS ===== */
+.bg-home{
+  position:fixed;
+  inset:0;
+  background:url("webfish-bg.jpeg") center/cover no-repeat;
+  filter:blur(3px) brightness(.55);
+  z-index:-4;
+  transition:opacity .6s ease;
+}
+
+.bg-overlay{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.45);
+  z-index:-3;
+}
+
+canvas{
+  position:fixed;
+  inset:0;
+  z-index:-2;
+  opacity:0;
+  transition:opacity .6s ease;
+}
+
+/* ===== SIDEBAR ===== */
+#sidebar{
+  position:fixed;
+  left:0;
+  top:0;
+  bottom:0;
+  width:240px;
+  background:var(--panel);
+  backdrop-filter:blur(18px);
+  padding:24px;
+  display:flex;
+  flex-direction:column;
+  animation:slideIn .8s ease;
+}
+
+.logo{
+  font-size:22px;
+  color:var(--neon);
+  margin-bottom:30px;
+  text-shadow:0 0 14px rgba(125,211,252,.6);
+}
+
+nav button{
+  all:unset;
+  display:block;
+  padding:12px 14px;
+  margin-bottom:10px;
+  cursor:pointer;
+  color:var(--text);
+  border-left:3px solid transparent;
+  transition:all .25s ease;
+}
+
+nav button:hover{
+  color:var(--neon);
+  border-left-color:var(--neon);
+  text-shadow:0 0 10px rgba(125,211,252,.6);
+}
+
+.discord-btn{
+  margin-top:auto;
+  padding:12px;
+  text-align:center;
+  color:#000;
+  background:var(--neon);
+  cursor:pointer;
+  box-shadow:0 0 25px rgba(125,211,252,.7);
+  transition:.3s;
+}
+
+.discord-btn:hover{
+  box-shadow:0 0 40px rgba(125,211,252,1);
+}
+
+/* ===== MAIN CONTENT ===== */
+main{
+  margin-left:260px;
+  padding:50px;
+  height:100vh;
+  overflow-y:auto;
+}
+
+.page{
+  display:none;
+  animation:fade .5s ease;
+}
+
+.page.active{
+  display:block;
+}
+
+h1{
+  font-size:32px;
+  margin-bottom:16px;
+}
+
+.bio span{
+  color:var(--neon);
+}
+
+/* ===== GRIDS ===== */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(240px,1fr));
+  gap:22px;
+  margin-top:30px;
+}
+
+/* ===== EXPLOIT / CARD ===== */
+.exploit{
+  background:rgba(5,8,18,.95);
+  border:1px solid rgba(125,211,252,.25);
+  padding:18px;
+  transition:.25s;
+  position:relative;
+}
+
+.exploit:hover{
+  border-color:var(--neon);
+  box-shadow:0 0 30px rgba(125,211,252,.3);
+  transform:translateY(-4px);
+}
+
+.exploit h3{
+  margin:0 0 10px;
+  color:var(--neon);
+  font-size:16px;
+}
+
+.code{
+  background:#020617;
+  border:1px solid rgba(255,255,255,.08);
+  padding:10px;
+  font-size:13px;
+  color:var(--muted);
+  overflow-x:auto;
+  white-space:pre-wrap;
+}
+
+/* ===== GAME OVERLAY ===== */
+#gameOverlay{
+  position:fixed;
+  inset:0;
+  background:#000;
+  z-index:50;
+  display:flex;
+  flex-direction:column;
+}
+
+#gameOverlay.hidden{
+  display:none;
+}
+
+.game-bar{
+  background:#020617;
+  color:var(--neon);
+  padding:10px 16px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.game-bar button{
+  background:none;
+  border:1px solid var(--neon);
+  color:var(--neon);
+  padding:6px 12px;
+  margin-left:10px;
+  cursor:pointer;
+  transition:.25s;
+}
+
+.game-bar button:hover{
+  background:var(--neon);
+  color:#000;
+}
+
+#gameFrame{
+  flex:1;
+  border:none;
+  width:100%;
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes slideIn{
+  from{transform:translateX(-100%)}
+  to{transform:translateX(0)}
+}
+
+@keyframes fade{
+  from{opacity:0}
+  to{opacity:1}
+}
