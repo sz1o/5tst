@@ -5,60 +5,28 @@
   <title>webfish</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<!-- BACKGROUNDS -->
-<div class="bg-home"></div>
-<div class="bg-overlay"></div>
-<canvas id="codeRain"></canvas>
+<div class="bg"></div>
 
-<!-- SIDEBAR -->
-<div id="sidebar">
-  <div class="logo">webfish</div>
-  <nav>
-    <button data-page="home">Home</button>
-    <button data-page="scripts">Roblox Scripts</button>
-    <button data-page="games">Unblxck3d Gxmes</button>
-  </nav>
-  <div id="discordBtn" class="discord-btn">Discord</div>
+<div class="sidebar">
+  <h2>webfish</h2>
+  <button onclick="showPage('home')">Home</button>
+  <button onclick="showPage('scripts')">Roblox Scripts</button>
 </div>
 
-<!-- CONTENT -->
-<main>
-
-  <section id="home" class="page active">
-    <h1 class="typewriter">Welcome to webfish</h1>
-    <p class="bio">
-      Where there is <span>Roblox Scripts</span> and <span>Unblocked Games</span>.
-    </p>
+<div class="content">
+  <section id="home" class="page">
+    <h1 class="type">Welcome to webfish</h1>
+    <p>Roblox Scripts & Unblocked Games</p>
   </section>
 
-  <section id="scripts" class="page">
-    <h1 class="typewriter">webfishes scripts</h1>
-    <div id="scriptsGrid" class="grid"></div>
+  <section id="scripts" class="page hidden">
+    <h1>Scripts</h1>
+    <div id="scriptsGrid"></div>
   </section>
-
-  <section id="games" class="page">
-    <h1>Unblocked Games</h1>
-    <div id="gamesGrid" class="grid"></div>
-  </section>
-
-</main>
-
-<!-- GAME OVERLAY -->
-<div id="gameOverlay" class="hidden">
-  <div class="game-bar">
-    <span id="gameTitle"></span>
-    <div>
-      <button onclick="fullscreenGame()">Fullscreen</button>
-      <button onclick="closeGame()">Close</button>
-    </div>
-  </div>
-  <iframe id="gameFrame"></iframe>
 </div>
 
 <script src="app.js"></script>
